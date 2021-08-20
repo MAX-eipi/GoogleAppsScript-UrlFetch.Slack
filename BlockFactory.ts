@@ -2,6 +2,8 @@ import * as Elements from "./API/BlockElements";
 import * as Blocks from "./API/Blocks";
 import { Text } from "./API/CompositionObjects";
 
+/* eslint @typescript-eslint/camelcase: off */
+
 export class SlackBlockFactory {
     public static section(text: Text, options: Blocks.SectionOptions = {}): Blocks.Section {
         const ret: Blocks.Section = {

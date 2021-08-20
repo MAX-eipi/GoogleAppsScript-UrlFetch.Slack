@@ -1,6 +1,8 @@
 import * as Elements from "./API/BlockElements";
 import * as CompositionObjects from "./API/CompositionObjects";
 
+/* eslint @typescript-eslint/camelcase: off */
+
 export class SlackBlockElementFactory {
     public static button(text: CompositionObjects.Text, actionId: string, options: Elements.ButtonOptions = {}): Elements.Button {
         const ret: Elements.Button = {

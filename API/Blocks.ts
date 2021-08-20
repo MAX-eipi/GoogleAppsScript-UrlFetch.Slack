@@ -18,6 +18,7 @@ export interface Section extends Block, SectionOptions {
     text: Text;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface DividerOptions extends BlockOptions { }
 
 export interface Divider extends Block, DividerOptions { }
@@ -31,12 +32,14 @@ export interface Image extends Block, ImageOptions {
     alt_text: string;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface ActionOptions extends BlockOptions { }
 
 export interface Action extends Block, ActionOptions {
     elements: (Elements.Button | Elements.SelectMenu | Elements.OverflowMenu | Elements.DatePicker)[];
 }
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface ContextOptions extends BlockOptions { }
 
 export interface Context extends Block, ContextOptions {
@@ -53,6 +56,7 @@ export interface Input extends Block, InputOptions {
     element: Elements.PlainTextInput | Elements.SelectMenu | Elements.MultiSelectMenu | Elements.DatePicker;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface FileOptions extends BlockOptions { }
 
 export interface File extends Block, FileOptions {

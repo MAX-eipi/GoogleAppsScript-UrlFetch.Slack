@@ -1,6 +1,7 @@
 import * as CompositionObjects from "./CompositionObjects";
 import { Block } from "./Blocks";
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface ElementOptions { }
 
 export interface Element extends ElementOptions {
@@ -39,6 +40,7 @@ export interface DatePicker extends Element, DatePickerOptions {
     action_id: string;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface ImageOptions extends ElementOptions { }
 
 export interface Image extends Element {
@@ -46,6 +48,7 @@ export interface Image extends Element {
     alt_text: string;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface MultiSelectMenu extends Element { }
 
 export interface MultiSelectMenuWithStaticOptionsOptions extends ElementOptions {
@@ -144,6 +147,7 @@ export interface RadioButtonGroup extends Element, RadioButtonGroupOptions {
     options: CompositionObjects.Option[];
 }
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface SelectMenu extends Element { }
 
 export interface SelectMenuWithStaticOptionsOptions extends ElementOptions {
@@ -210,4 +214,5 @@ export interface AttachmentOptions {
     color?: string;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface Attachment extends AttachmentOptions { }

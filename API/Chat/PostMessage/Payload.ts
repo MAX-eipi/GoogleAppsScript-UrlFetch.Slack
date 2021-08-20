@@ -26,7 +26,7 @@ export interface Response extends UrlFetchResponse {
     readonly error?: string;
     readonly channel?: string;
     readonly ts?: string;
-    readonly message?: Record<string, any>;
+    readonly message?: Record<string, unknown>;
 }
 
 export type SlackChatPostMessageRequest = Request;

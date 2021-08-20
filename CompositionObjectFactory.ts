@@ -1,5 +1,7 @@
 import { ConfirmationDialog, Filter, Option, OptionGroup, Text } from "./API/CompositionObjects";
 
+/* eslint @typescript-eslint/camelcase: off */
+
 export class SlackCompositionObjectFactory {
     public static plainText(text: string, emoji?: boolean): Text {
         const ret: Text = {

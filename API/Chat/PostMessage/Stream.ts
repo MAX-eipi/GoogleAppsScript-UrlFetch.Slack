@@ -16,12 +16,14 @@ export class SlackChatPostMessageStream implements ConcreteStream<Payload.Reques
         return this._error ? true : false;
     }
 
+    // eslint-disable-next-line @typescript-eslint/camelcase
     private getHeader(request: Payload.Request): GoogleAppsScript.URL_Fetch.HttpHeaders {
         return {
             'content-type': 'application/json; charset=utf-8',
             'authorization': `Bearer ${request.token}`
         };
     }
+    // eslint-disable-next-line @typescript-eslint/camelcase
     public getRawRequest(): GoogleAppsScript.URL_Fetch.URLFetchRequest {
         return {
             url: this.methodUrl,
@@ -32,6 +34,7 @@ export class SlackChatPostMessageStream implements ConcreteStream<Payload.Reques
         };
     }
 
+    // eslint-disable-next-line @typescript-eslint/camelcase
     public setRawResponse(response: GoogleAppsScript.URL_Fetch.HTTPResponse): void {
         this._response = JSON.parse(response.getContentText());
         if (this._response.error) {
