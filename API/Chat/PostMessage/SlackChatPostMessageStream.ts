@@ -1,11 +1,8 @@
-import { ConcreteStream } from '../../../../UrlFetch/UrlFetch';
-import * as Payload from './Payload';
-
-export class SlackChatPostMessageStream implements ConcreteStream<Payload.Request, Payload.Response> {
+class SlackChatPostMessageStream implements UrlFetch.ConcreteStream<UrlFetch_Slack.ChatPostMessageRequest, UrlFetch_Slack.ChatPostMessageResponse> {
     private readonly methodUrl = 'https://slack.com/api/chat.postMessage';
     private readonly method = 'post';
 
-    constructor(readonly request: Payload.Request) { }
+    constructor(readonly request: UrlFetch_Slack.ChatPostMessageRequest) { }
 
     private _error = '';
     public get error(): string {
@@ -17,7 +14,7 @@ export class SlackChatPostMessageStream implements ConcreteStream<Payload.Reques
     }
 
     // eslint-disable-next-line @typescript-eslint/camelcase
-    private getHeader(request: Payload.Request): GoogleAppsScript.URL_Fetch.HttpHeaders {
+    private getHeader(request: UrlFetch_Slack.ChatPostMessageRequest): GoogleAppsScript.URL_Fetch.HttpHeaders {
         return {
             'content-type': 'application/json; charset=utf-8',
             'authorization': `Bearer ${request.token}`
@@ -42,8 +39,8 @@ export class SlackChatPostMessageStream implements ConcreteStream<Payload.Reques
         }
     }
 
-    private _response: Payload.Response = null;
-    public get response(): Payload.Response {
+    private _response: UrlFetch_Slack.ChatPostMessageResponse = null;
+    public get response(): UrlFetch_Slack.ChatPostMessageResponse {
         return this._response;
     }
 }

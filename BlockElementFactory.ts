@@ -1,11 +1,11 @@
-import * as Elements from "./API/BlockElements";
-import * as CompositionObjects from "./API/CompositionObjects";
-
 /* eslint @typescript-eslint/camelcase: off */
-
-export class SlackBlockElementFactory {
-    public static button(text: CompositionObjects.Text, actionId: string, options: Elements.ButtonOptions = {}): Elements.Button {
-        const ret: Elements.Button = {
+class SlackBlockElementFactory {
+    public static button(
+        text: UrlFetch_Slack.CompositionObjects.Text,
+        actionId: string,
+        options: UrlFetch_Slack.BlockElements.ButtonOptions = {}
+    ): UrlFetch_Slack.BlockElements.Button {
+        const ret: UrlFetch_Slack.BlockElements.Button = {
             type: 'button',
             text: text,
             action_id: actionId,
@@ -21,10 +21,10 @@ export class SlackBlockElementFactory {
 
     public static checkboxGroups(
         actionId: string,
-        options: CompositionObjects.Option[],
-        extraOptions: Elements.CheckboxGroupsOptions = {}
-    ): Elements.CheckboxGroups {
-        const ret: Elements.CheckboxGroups = {
+        options: UrlFetch_Slack.CompositionObjects.Option[],
+        extraOptions: UrlFetch_Slack.BlockElements.CheckboxGroupsOptions = {}
+    ): UrlFetch_Slack.BlockElements.CheckboxGroups {
+        const ret: UrlFetch_Slack.BlockElements.CheckboxGroups = {
             type: 'checkboxes',
             action_id: actionId,
             options: options,
@@ -36,8 +36,8 @@ export class SlackBlockElementFactory {
         return ret;
     }
 
-    public static datePicker(actionId: string, options: Elements.DatePickerOptions = {}): Elements.DatePicker {
-        const ret: Elements.DatePicker = {
+    public static datePicker(actionId: string, options: UrlFetch_Slack.BlockElements.DatePickerOptions = {}): UrlFetch_Slack.BlockElements.DatePicker {
+        const ret: UrlFetch_Slack.BlockElements.DatePicker = {
             type: 'datepicker',
             action_id: actionId,
         };
@@ -49,7 +49,7 @@ export class SlackBlockElementFactory {
         return ret;
     }
 
-    public static image(imageUrl: string, altText: string): Elements.Image {
+    public static image(imageUrl: string, altText: string): UrlFetch_Slack.BlockElements.Image {
         return {
             type: 'image',
             image_url: imageUrl,
@@ -58,12 +58,12 @@ export class SlackBlockElementFactory {
     }
 
     public static multiSelectMenuWithStaticOptions(
-        placeholder: CompositionObjects.Text,
+        placeholder: UrlFetch_Slack.CompositionObjects.Text,
         actionId: string,
-        options: CompositionObjects.Option[],
-        extraOptions: Elements.MultiSelectMenuWithStaticOptionsOptions = {}
-    ): Elements.MultiSelectMenuWithStaticOptions {
-        const ret: Elements.MultiSelectMenuWithStaticOptions = {
+        options: UrlFetch_Slack.CompositionObjects.Option[],
+        extraOptions: UrlFetch_Slack.BlockElements.MultiSelectMenuWithStaticOptionsOptions = {}
+    ): UrlFetch_Slack.BlockElements.MultiSelectMenuWithStaticOptions {
+        const ret: UrlFetch_Slack.BlockElements.MultiSelectMenuWithStaticOptions = {
             type: 'multi_static_select',
             placeholder: placeholder,
             action_id: actionId,
@@ -79,11 +79,11 @@ export class SlackBlockElementFactory {
     }
 
     public static multiSelectMenuWithExternalDataSource(
-        placeholder: CompositionObjects.Text,
+        placeholder: UrlFetch_Slack.CompositionObjects.Text,
         actionId: string,
-        options: Elements.MultiSelectMenuWithExternalDataSourceOptions = {}
-    ): Elements.MultiSelectMenuWithExternalDataSource {
-        const ret: Elements.MultiSelectMenuWithExternalDataSource = {
+        options: UrlFetch_Slack.BlockElements.MultiSelectMenuWithExternalDataSourceOptions = {}
+    ): UrlFetch_Slack.BlockElements.MultiSelectMenuWithExternalDataSource {
+        const ret: UrlFetch_Slack.BlockElements.MultiSelectMenuWithExternalDataSource = {
             type: 'multi_external_select',
             placeholder: placeholder,
             action_id: actionId,
@@ -98,11 +98,11 @@ export class SlackBlockElementFactory {
     }
 
     public static multiSelectMenuWithUserList(
-        placeholder: CompositionObjects.Text,
+        placeholder: UrlFetch_Slack.CompositionObjects.Text,
         actionId: string,
-        options: Elements.MultiSelectMenuWithUserListOptions = {}
-    ): Elements.MultiSelectMenuWithUserList {
-        const ret: Elements.MultiSelectMenuWithUserList = {
+        options: UrlFetch_Slack.BlockElements.MultiSelectMenuWithUserListOptions = {}
+    ): UrlFetch_Slack.BlockElements.MultiSelectMenuWithUserList {
+        const ret: UrlFetch_Slack.BlockElements.MultiSelectMenuWithUserList = {
             type: 'multi_users_select',
             placeholder: placeholder,
             action_id: actionId,
@@ -116,11 +116,11 @@ export class SlackBlockElementFactory {
     }
 
     public static multiSelectMenuWithConversationsList(
-        placeholder: CompositionObjects.Text,
+        placeholder: UrlFetch_Slack.CompositionObjects.Text,
         actionId: string,
-        options: Elements.MultiSelectMenuWithConversationsListOptions
-    ): Elements.MultiSelectMenuWithConversationsList {
-        const ret: Elements.MultiSelectMenuWithConversationsList = {
+        options: UrlFetch_Slack.BlockElements.MultiSelectMenuWithConversationsListOptions
+    ): UrlFetch_Slack.BlockElements.MultiSelectMenuWithConversationsList {
+        const ret: UrlFetch_Slack.BlockElements.MultiSelectMenuWithConversationsList = {
             type: 'multi_conversations_select',
             placeholder: placeholder,
             action_id: actionId,
@@ -136,11 +136,11 @@ export class SlackBlockElementFactory {
     }
 
     public static multiSelectMenuWithChannelsList(
-        placeholder: CompositionObjects.Text,
+        placeholder: UrlFetch_Slack.CompositionObjects.Text,
         actionId: string,
-        options: Elements.MultiSelectMenuWithChannelsListOptions = {}
-    ): Elements.MultiSelectMenuWithChannelsList {
-        const ret: Elements.MultiSelectMenuWithChannelsList = {
+        options: UrlFetch_Slack.BlockElements.MultiSelectMenuWithChannelsListOptions = {}
+    ): UrlFetch_Slack.BlockElements.MultiSelectMenuWithChannelsList {
+        const ret: UrlFetch_Slack.BlockElements.MultiSelectMenuWithChannelsList = {
             type: 'multi_channels_select',
             placeholder: placeholder,
             action_id: actionId,
@@ -155,10 +155,10 @@ export class SlackBlockElementFactory {
 
     public static overflowMenu(
         actionId: string,
-        options: CompositionObjects.Option[],
-        extraOptions: Elements.OverflowMenuOptions = {}
-    ): Elements.OverflowMenu {
-        const ret: Elements.OverflowMenu = {
+        options: UrlFetch_Slack.CompositionObjects.Option[],
+        extraOptions: UrlFetch_Slack.BlockElements.OverflowMenuOptions = {}
+    ): UrlFetch_Slack.BlockElements.OverflowMenu {
+        const ret: UrlFetch_Slack.BlockElements.OverflowMenu = {
             type: 'overflow',
             action_id: actionId,
             options: options,
@@ -171,9 +171,9 @@ export class SlackBlockElementFactory {
 
     public static plainTextInput(
         actionId: string,
-        options: Elements.PlainTextInputOptions = {}
-    ): Elements.PlainTextInput {
-        const ret: Elements.PlainTextInput = {
+        options: UrlFetch_Slack.BlockElements.PlainTextInputOptions = {}
+    ): UrlFetch_Slack.BlockElements.PlainTextInput {
+        const ret: UrlFetch_Slack.BlockElements.PlainTextInput = {
             type: 'plain_text_input',
             action_id: actionId,
         };
@@ -189,10 +189,10 @@ export class SlackBlockElementFactory {
 
     public static radioButtonGroup(
         actionId: string,
-        options: CompositionObjects.Option[],
-        extraOptions: Elements.RadioButtonGroupOptions = {}
-    ): Elements.RadioButtonGroup {
-        const ret: Elements.RadioButtonGroup = {
+        options: UrlFetch_Slack.CompositionObjects.Option[],
+        extraOptions: UrlFetch_Slack.BlockElements.RadioButtonGroupOptions = {}
+    ): UrlFetch_Slack.BlockElements.RadioButtonGroup {
+        const ret: UrlFetch_Slack.BlockElements.RadioButtonGroup = {
             type: 'radio_buttons',
             action_id: actionId,
             options: options,
@@ -205,12 +205,12 @@ export class SlackBlockElementFactory {
     }
 
     public static selectMenuWithStaticOptions(
-        placeholder: CompositionObjects.Text,
+        placeholder: UrlFetch_Slack.CompositionObjects.Text,
         actionId: string,
-        options: CompositionObjects.Option[],
-        extraOptions: Elements.SelectMenuWithStaticOptionsOptions = {}
-    ): Elements.SelectMenuWithStaticOptions {
-        const ret: Elements.SelectMenuWithStaticOptions = {
+        options: UrlFetch_Slack.CompositionObjects.Option[],
+        extraOptions: UrlFetch_Slack.BlockElements.SelectMenuWithStaticOptionsOptions = {}
+    ): UrlFetch_Slack.BlockElements.SelectMenuWithStaticOptions {
+        const ret: UrlFetch_Slack.BlockElements.SelectMenuWithStaticOptions = {
             type: 'static_select',
             placeholder: placeholder,
             action_id: actionId,
@@ -225,11 +225,11 @@ export class SlackBlockElementFactory {
     }
 
     public static selectMenuWithExternalDataSource(
-        placeholder: CompositionObjects.Text,
+        placeholder: UrlFetch_Slack.CompositionObjects.Text,
         actionId: string,
-        options: Elements.SelectMenuWithExternalDataSourceOptions = {}
-    ): Elements.SelectMenuWithExternalDataSource {
-        const ret: Elements.SelectMenuWithExternalDataSource = {
+        options: UrlFetch_Slack.BlockElements.SelectMenuWithExternalDataSourceOptions = {}
+    ): UrlFetch_Slack.BlockElements.SelectMenuWithExternalDataSource {
+        const ret: UrlFetch_Slack.BlockElements.SelectMenuWithExternalDataSource = {
             type: 'external_select',
             placeholder: placeholder,
             action_id: actionId,
@@ -243,11 +243,11 @@ export class SlackBlockElementFactory {
     }
 
     public static selectMenuWithUserList(
-        placeholder: CompositionObjects.Text,
+        placeholder: UrlFetch_Slack.CompositionObjects.Text,
         actionId: string,
-        options: Elements.SelectMenuWithUserListOptions = {}
-    ): Elements.SelectMenuWithUserList {
-        const ret: Elements.SelectMenuWithUserList = {
+        options: UrlFetch_Slack.BlockElements.SelectMenuWithUserListOptions = {}
+    ): UrlFetch_Slack.BlockElements.SelectMenuWithUserList {
+        const ret: UrlFetch_Slack.BlockElements.SelectMenuWithUserList = {
             type: 'users_select',
             placeholder: placeholder,
             action_id: actionId,
@@ -260,11 +260,11 @@ export class SlackBlockElementFactory {
     }
 
     public static selectMenuWithConversationsList(
-        placeholder: CompositionObjects.Text,
+        placeholder: UrlFetch_Slack.CompositionObjects.Text,
         actionId: string,
-        options: Elements.SelectMenuWithConversationsListOptions = {}
-    ): Elements.SelectMenuWithConversationsList {
-        const ret: Elements.SelectMenuWithConversationsList = {
+        options: UrlFetch_Slack.BlockElements.SelectMenuWithConversationsListOptions = {}
+    ): UrlFetch_Slack.BlockElements.SelectMenuWithConversationsList {
+        const ret: UrlFetch_Slack.BlockElements.SelectMenuWithConversationsList = {
             type: 'conversations_select',
             placeholder: placeholder,
             action_id: actionId,
@@ -280,11 +280,11 @@ export class SlackBlockElementFactory {
     }
 
     public static selectMenuWithChannelsList(
-        placeholder: CompositionObjects.Text,
+        placeholder: UrlFetch_Slack.CompositionObjects.Text,
         actionId: string,
-        options: Elements.SelectMenuWithChannelsListOptions = {}
-    ): Elements.SelectMenuWithChannelsList {
-        const ret: Elements.SelectMenuWithChannelsList = {
+        options: UrlFetch_Slack.BlockElements.SelectMenuWithChannelsListOptions = {}
+    ): UrlFetch_Slack.BlockElements.SelectMenuWithChannelsList {
+        const ret: UrlFetch_Slack.BlockElements.SelectMenuWithChannelsList = {
             type: 'channels_select',
             placeholder: placeholder,
             action_id: actionId,
@@ -297,8 +297,8 @@ export class SlackBlockElementFactory {
         return ret;
     }
 
-    public static attachment(options: Elements.AttachmentOptions = {}): Elements.Attachment {
-        const ret: Elements.Attachment = {
+    public static attachment(options: UrlFetch_Slack.BlockElements.AttachmentOptions = {}): UrlFetch_Slack.BlockElements.Attachment {
+        const ret: UrlFetch_Slack.BlockElements.Attachment = {
         };
         this.copyValue(options, ret, [
             'blocks',
